@@ -55,6 +55,25 @@ namespace ListCollection
             {
                 Console.WriteLine($"Hello {name.ToUpper()}!");
             }
+
+            Console.WriteLine();
+            //Declare new List<T> of int type
+            var fibonacciNumbers = new List<int> { 1, 1 };
+
+            //Using for loop to add 20 fibonacci numbers to list
+            for (int i = 0; i < 18; i++) //or while(fibonacciNumbers.Count < 20)
+            {
+                //Declaring two variables that will hold the values of the 2 previous number in the list
+                var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+                var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+                //Adding the sum of the 2 previous numbers to the fibonacciNumbers List
+                fibonacciNumbers.Add(previous + previous2);
+            }
+
+            foreach (var item in fibonacciNumbers)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
